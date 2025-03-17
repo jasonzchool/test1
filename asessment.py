@@ -15,10 +15,30 @@ def hard():
     num2 = random.randint(1,1000)
     return [num1,num2]
 
+def questiontype():
+        try: 
+            answer=int(input(f"{numbers[0]} {sign}\
+{numbers[1]}="))
+        except ValueError:
+            print("you have not entered an integer")
+        except:
+            print("an error has occurred")
 
-signs=["+","-","*"]
-num=random.randint(0,len(signs)-1)
-sign=signs[num]
+        if sign=="+" and answer==(numbers[0]+numbers[1]):
+            print("correct!")
+            counter+=1
+        elif sign=="-" and answer==(numbers[0]-numbers[1]):
+            print("correct!")
+            counter+=1
+        elif sign=="*" and answer==(numbers[0]*numbers[1]):
+            print("correct!")
+            counter+=1
+        else:
+            print("wrong answer")
+    
+
+
+
 question_type=" "
 counter=0
 running=True
@@ -38,36 +58,34 @@ while running:
     if question_type==1:
         for i in range(10):
             numbers = easy()
-        
+            signs=["+","-","*"]
+            num=random.randint(0,len(signs)-1)
+            sign=signs[num]
+            questiontype()
+        print(f"you got {counter} questions right!")
+            
         
     elif question_type==2:
-        numbers = medium()
+        for i in range(10):
+            numbers = medium()
+            signs=["+","-","*"]
+            num=random.randint(0,len(signs)-1)
+            sign=signs[num]
+            questiontype()
+        print(f"you got {counter} questions right!")
         
     elif question_type==3:
-        numbers = hard()
+        for i in range(10):
+            numbers = hard()
+            signs=["+","-","*"]
+            num=random.randint(0,len(signs)-1)
+            sign=signs[num]
+            questiontype()
+        print(f"you got {counter} questions right!")
+        
 
-    for i in range(10):    
-        try: 
-            answer=int(input(f"{numbers[0]} {sign}\
- {numbers[1]}="))
-        except ValueError:
-            print("you have not entered an integer")
-        except:
-            print("an error has occurred")
+      
 
-        if sign=="+" and answer==(numbers[0]+numbers[1]):
-            print("correct!")
-            counter+=1
-        elif sign=="-" and answer==(numbers[0]-numbers[1]):
-            print("correct!")
-            counter+=1
-        elif sign=="*" and answer==(numbers[0]*numbers[1]):
-            print("correct!")
-            counter+=1
-        else:
-            print("wrong answer")
-    print(f"you got {counter} questions right!")
-else:
-    print("program closing...")
-    running=False
-     
+    else:
+        print("program closing...")
+        running=False
