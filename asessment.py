@@ -4,6 +4,7 @@ def easy():
     num1 = random.randint(1,50)
     num2 = random.randint(1,50)
     return [num1,num2]
+#generates a random number from 1-50
 
 def medium():
     num1 = random.randint(1,100)
@@ -16,6 +17,7 @@ def hard():
     return [num1,num2]
 
 def questiontype():
+        #generates a math question from both question and signs
         try: 
             answer=int(input(f"{numbers[0]} {sign}\
 {numbers[1]}="))
@@ -37,25 +39,30 @@ def questiontype():
             print("wrong answer")
     
 
-#hggh
 
 question_type=" "
 counter=0
+#amount of questions right
 running=True
 
 while running:
     print("1. Easy 2. Medium 3. Hard 4. Exit")
+    #options to choose
 
     while question_type!=int:    
         try:
             question_type=int(input("what question type would you like:"))
+            #choose your question
             break
         except ValueError:
             print("please write an integer")
+            #prevent valueError
         except:
             print("an error occurred")
+            #prevent other errors
         
     if question_type==1:
+        #first question type, easy
         for i in range(10):
             numbers = easy()
             signs=["+","-","*"]
@@ -87,5 +94,6 @@ while running:
       
 
     else:
+        #shuts program
         print("program closing...")
         running=False
