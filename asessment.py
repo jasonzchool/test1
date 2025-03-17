@@ -37,7 +37,7 @@ def questiontype():
             print("wrong answer")
     
 
-
+#hggh
 
 question_type=" "
 counter=0
