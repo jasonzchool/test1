@@ -10,11 +10,13 @@ def medium():
     num1 = random.randint(1,100)
     num2 = random.randint(1,100)
     return [num1,num2]
+    #generates a random number from 1-100
 
 def hard():
     num1 = random.randint(1,1000)
     num2 = random.randint(1,1000)
     return [num1,num2]
+    #generates a random number from 1-1000
     
 
 def questiontype(counter):
