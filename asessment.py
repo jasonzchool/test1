@@ -15,16 +15,20 @@ def hard():
     num1 = random.randint(1,1000)
     num2 = random.randint(1,1000)
     return [num1,num2]
+    
 
-def questiontype():
+def questiontype(counter):
         #generates a math question from both question and signs
-        try: 
-            answer=int(input(f"{numbers[0]} {sign}\
-{numbers[1]}="))
-        except ValueError:
-            print("you have not entered an integer")
-        except:
-            print("an error has occurred")
+        while True:
+            try: 
+                answer=int(input(f"{numbers[0]} {sign}\
+    {numbers[1]}="))
+                break
+            except ValueError:
+                print("you have not entered an integer")
+            except:
+                print("an error has occurred")
+            
 
         if sign=="+" and answer==(numbers[0]+numbers[1]):
             print("correct!")
@@ -37,6 +41,7 @@ def questiontype():
             counter+=1
         else:
             print("wrong answer")
+        return counter
     
 
 
@@ -68,7 +73,7 @@ while running:
             signs=["+","-","*"]
             num=random.randint(0,len(signs)-1)
             sign=signs[num]
-            questiontype()
+            counter = questiontype(counter)
         print(f"you got {counter} questions right!")
             
         
@@ -78,7 +83,7 @@ while running:
             signs=["+","-","*"]
             num=random.randint(0,len(signs)-1)
             sign=signs[num]
-            questiontype()
+            counter = questiontype(counter)
         print(f"you got {counter} questions right!")
         
     elif question_type==3:
@@ -87,7 +92,7 @@ while running:
             signs=["+","-","*"]
             num=random.randint(0,len(signs)-1)
             sign=signs[num]
-            questiontype()
+            counter = questiontype(counter)
         print(f"you got {counter} questions right!")
         
 
